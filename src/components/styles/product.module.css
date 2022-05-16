@@ -1,0 +1,14 @@
+.title {
+  text-align: justify;
+  margin-top: 10px;
+  font-weight: 700;
+  color: var(--border-color);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.seller{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}

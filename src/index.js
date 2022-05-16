@@ -4,11 +4,22 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter } from 'react-router-dom';
+import AuthProvider from './context/AuthContext';
+import { UserProvider } from './context/UserHandlerContext';
+import AddressProvider from './context/AddressContext';
 
 ReactDOM.render(
   <StrictMode>
-    <ColorModeScript />
-    <App />
+    <BrowserRouter>
+      <AuthProvider>
+        <UserProvider>
+          <AddressProvider>
+            <App />
+          </AddressProvider>
+        </UserProvider>
+      </AuthProvider>
+    </BrowserRouter>
   </StrictMode>,
   document.getElementById('root')
 );

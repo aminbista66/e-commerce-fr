@@ -1,0 +1,26 @@
+.subtotal{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #D0D0D0;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.title{
+    font-size: 20px;
+    font-weight: 600;
+}
+.price{
+    font-size: 20px;
+    font-weight: 500;
+    color: #565656;
+}
+.discount{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.sticky_box{
+    position: sticky;
+    top: 10px;
+}

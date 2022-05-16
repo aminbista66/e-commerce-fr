@@ -1,0 +1,26 @@
+.avatar{
+    position: absolute;
+    top: 20px;
+    right: 180px;
+    cursor: pointer;
+}
+
+.name{
+    position: absolute;
+    right: 220px;
+    top: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.dropdown_container{
+    width: 150px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;z-index: 9999999;
+
+}
+
+.dropdown_item{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
