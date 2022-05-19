@@ -12,10 +12,13 @@ import { useParams } from 'react-router-dom';
 import { UserInstance } from '../utils/AxiosAuthInstance';
 import { Navbar } from '../components';
 import styles from './selectbutton.module.css';
+import { useGlobalAuthContext } from '../context/AuthContext';
 
 const Profile = () => {
   let { user_id } = useParams();
   const [data, setData] = useState({});
+  const { updateToken } = useGlobalAuthContext();
+  const [ refresh, setRefresh ] = useState(false);
   useEffect(() => {
     UserInstance.get(`detail/`)
       .then(res => {
@@ -23,8 +26,15 @@ const Profile = () => {
           setData(res.data);
         }
       })
-      .catch(err => console.log(err));
-  }, []);
+      .catch(err =>{
+        if(localStorage.getItem('authtokens')){
+          if(JSON.parse(localStorage.getItem("authtokens")).refresh){
+            updateToken(JSON.parse(localStorage.getItem("authtokens")).refresh);
+            setRefresh(!refresh)
+          }
+        }
+      });
+  }, [refresh]);
 
   return (
     <div style={{ overflow: 'hidden' }}>

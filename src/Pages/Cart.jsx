@@ -43,7 +43,7 @@ const Cart = () => {
               refresh={refresh}
             />
           </Stack>
-          <Checkout setRefresh={setRefresh} refresh={refresh} />
+          <Checkout setRefresh={setRefresh} refresh={refresh} items={products}/>
         </Stack>
       </>
     );

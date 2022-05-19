@@ -3,6 +3,9 @@ import { Box, Stack, Text, Button } from '@chakra-ui/react';
 import styles from './styles/checkout.module.css';
 import { MdLocalShipping } from 'react-icons/md';
 import axios from 'axios';
+import AddressSelect from './AddressSelect';
+import { useGlobalAddressContext } from '../context/AddressContext';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = ({ setRefresh, refresh }) => {
   const [data, setData] = useState({});
@@ -20,6 +23,20 @@ const Checkout = ({ setRefresh, refresh }) => {
       }
     }).catch(err => console.log(err))
   }, [refresh]);
+
+  const { addresses } = useGlobalAddressContext();
+  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [item_slug, set_item_slug] = useState();
+
+  const handleOrderclick = slug => {
+    setIsModalOpen(true);
+    set_item_slug(slug);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div
       style={{
@@ -78,6 +95,7 @@ const Checkout = ({ setRefresh, refresh }) => {
         <MdLocalShipping />
         <Text>2-3 business days delivery</Text>
       </Stack>
+      <AddressSelect />
     </div>
   );
 };
