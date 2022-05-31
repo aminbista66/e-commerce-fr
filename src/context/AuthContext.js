@@ -25,8 +25,7 @@ export default function AuthProvider({ children }) {
       setUser(jwtDecode(res.data.access));
       navigate('/')
     });
-  };
-
+  }
 
   const logoutUser = () =>{
     localStorage.removeItem('authtokens')

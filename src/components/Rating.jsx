@@ -3,7 +3,7 @@ import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 export default function Rating({ rating }) {
     return (
-      <Box d="flex" alignItems="center" sx={{ paddingTop: '10px' }}>
+      <Box display="flex" alignItems="center" sx={{ paddingTop: '10px' }}>
         {Array(5)
           .fill('')
           .map((_, i) => {

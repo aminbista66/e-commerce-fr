@@ -16,7 +16,7 @@ export default function AddressProvider({ children }){
             }
         }).catch(err => console.log(err))
 
-    }, [refreshAddressContext])
+    }, [])
 
     return(
         <AddressContext.Provider value={{ addresses }}>

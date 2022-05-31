@@ -10,18 +10,21 @@ import { useNavigate } from 'react-router-dom';
 const Checkout = ({ setRefresh, refresh }) => {
   const [data, setData] = useState({});
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/products/pre-checkout/summary', {
-      headers: {
-        Authorization:
-          'Bearer' +
-          ' ' +
-          JSON.parse(localStorage.getItem('authtokens')).access,
-      },
-    }).then(res => {
-      if(res.status === 200){
-        setData(res.data);
-      }
-    }).catch(err => console.log(err))
+    axios
+      .get('http://127.0.0.1:8000/products/pre-checkout/summary', {
+        headers: {
+          Authorization:
+            'Bearer' +
+            ' ' +
+            JSON.parse(localStorage.getItem('authtokens')).access,
+        },
+      })
+      .then(res => {
+        if (res.status === 200) {
+          setData(res.data);
+        }
+      })
+      .catch(err => console.log(err));
   }, [refresh]);
 
   const { addresses } = useGlobalAddressContext();
@@ -53,7 +56,7 @@ const Checkout = ({ setRefresh, refresh }) => {
         fontSize="2xl"
         sx={{ fontWeight: '500' }}
       >
-       SUMMARY
+        SUMMARY
       </Text>
       <div className={styles.subtotal}>
         <span className={styles.title}>Sub-total</span>
@@ -95,7 +98,14 @@ const Checkout = ({ setRefresh, refresh }) => {
         <MdLocalShipping />
         <Text>2-3 business days delivery</Text>
       </Stack>
-      <AddressSelect />
+      <AddressSelect
+        isModalOpen={isModalOpen}
+        addresses={addresses}
+        closeModal={closeModal}
+        item_slug={item_slug}
+        refresh={refresh}
+        setRefresh={setRefresh}
+      />
     </div>
   );
 };
