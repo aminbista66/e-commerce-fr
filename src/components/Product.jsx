@@ -21,10 +21,9 @@ const Product = ({ data }) => {
         <img
           src={'http://127.0.0.1:8000/media/' + `${data.images[0].image}`}
           alt=""
+          style={{height: "350px"}}
         />
-        
         {data.quantity !== undefined && data.quantity ===0  ? (
-          
           <div style={{marginTop: '5px'}}>
           <Badge colorScheme="red">out of stock</Badge>
             </div>

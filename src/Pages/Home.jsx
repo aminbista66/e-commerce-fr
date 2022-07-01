@@ -23,7 +23,6 @@ const Home = () => {
         setDivident(res.data.results.length)
     });
   }, []);
-  console.log(previousURL);
   const changePage = page => {
     ProductInstance.get(`list/?page=${page}`).then(res => {
       if (res.status === 200) {
@@ -34,7 +33,7 @@ const Home = () => {
         setPreviousURL(res.data.previous);
     });
   };
-
+    
   const handleIconButton = url => {
     ProductInstance.get(url).then(res => {
       if (res.status === 200) {
