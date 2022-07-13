@@ -9,3 +9,9 @@
 .btn:hover{
     background-color: #3b3c3c;
 }
+
+.register_btn:hover{
+    color: #0000EE;
+    border-bottom: 2px solid #0000EE;
+    transition: none;
+}

@@ -30,4 +30,6 @@ const VerifyInstance = axios.create({
   },
 });
 
+
+
 export { AuthInstance, UserInstance, VerifyInstance };

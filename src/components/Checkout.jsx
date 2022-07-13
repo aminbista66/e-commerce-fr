@@ -70,25 +70,7 @@ const Checkout = ({ setRefresh, refresh }) => {
         <span className={styles.title}>Total</span>
         <span className={styles.price}>Rs.{data.net_amount + 100}</span>
       </div>
-      <Button
-        sx={{
-          padding: '10px 20px',
-          backgroundColor: '#202121',
-          color: 'white',
-          marginTop: '30px',
-          width: '100%',
-        }}
-        bg="gray.900"
-        color="white"
-        textTransform={'uppercase'}
-        _hover={{
-          transform: 'translateY(2px)',
-          boxShadow: 'lg',
-        }}
-        rounded="none"
-      >
-        CHECKOUT
-      </Button>
+      
       <Stack
         direction="row"
         alignItems="center"

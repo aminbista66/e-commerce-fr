@@ -6,7 +6,7 @@ const UserContext = createContext('');
 export function UserProvider({ children }){
     const navigate = useNavigate();
     const createUser = (data) =>{
-        console.log(data)
+
         UserInstance.post(`create/`, data).then(res => {
             if(res.status === 201){
                 navigate('login/')

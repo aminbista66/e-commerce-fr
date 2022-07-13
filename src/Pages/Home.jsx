@@ -47,7 +47,8 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <ProductList products={products} />
+      { products.length ? <>
+        <ProductList products={products} />
       <div
         style={{
           display: 'flex',
@@ -85,6 +86,8 @@ const Home = () => {
           )}
         </Stack>
       </div>
+       </> : <></>}
+      
     </>
   );
 };

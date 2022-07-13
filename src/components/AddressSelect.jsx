@@ -51,7 +51,7 @@ const AddressSelect = ({ isModalOpen, closeModal, addresses, item_slug, refresh,
         >
           {addresses !== undefined &&
             addresses.map((address, i) => (
-              <option value={address.id}>
+              <option value={address.id} key={i}>
                 {address.city}, {address.area} - {address.postal_code}
               </option>
             ))}
